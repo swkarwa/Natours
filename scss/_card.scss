@@ -1,0 +1,392 @@
+@use "colors" as *;
+
+// .card {
+//   height: 50rem;
+//   width: 30rem;
+//   perspective: 150rem;
+//   -moz-perspective: 150rem;
+//   position: relative;
+
+//   &-side {
+//     height: 100%;
+//     width: 100%;
+//     color: $color-grey-light;
+//     transition: all 1s ease;
+//     border-radius: 1rem;
+//     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.1);
+//     backface-visibility: hidden;
+
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+
+//     &-front {
+//       background-color: $color-white;
+//       transform: rotateY(0deg);
+
+//       padding: 0;
+//       overflow: hidden; // to ensure image doesn't overflow
+
+//       display: flex;
+//       flex-direction: column; // stack children vertically
+//     }
+
+//     &-back {
+//       padding: 0;
+//       overflow: hidden;
+
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+
+//       transform: rotateY(180deg);
+//       &-1 {
+//         background-image: linear-gradient(
+//           to bottom right,
+//           $color-secondary-light,
+//           $color-secondary-dark
+//         );
+//       }
+
+//       &-2 {
+//         background-image: linear-gradient(
+//           to bottom right,
+//           $color-primary-light,
+//           $color-primary-dark
+//         );
+//       }
+//       &-3 {
+//         background-image: linear-gradient(
+//           to bottom right,
+//           $color-tertiary-light,
+//           $color-tertiary-dark
+//         );
+//       }
+//     }
+//   }
+
+//   // Correct nesting for hover
+//   &:hover {
+//     .card-side-front {
+//       transform: rotateY(-180deg);
+//     }
+
+//     .card-side-back {
+//       transform: rotateY(0deg);
+//     }
+//   }
+//   // front style
+//   &-picture {
+//     width: 100%;
+//     height: 40%;
+//     background-size: cover;
+//     background-blend-mode: color;
+//     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+//     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+
+//     &-1 {
+//       background-image: linear-gradient(
+//           to right bottom,
+//           $color-secondary-light,
+//           $color-secondary-dark
+//         ),
+//         url("../img/nat-5.jpg");
+//     }
+
+//     &-2 {
+//       background-image: linear-gradient(
+//           to right bottom,
+//           $color-primary-light,
+//           $color-secondary-dark
+//         ),
+//         url("../img/nat-6.jpg");
+//     }
+
+//     &-3 {
+//       background-image: linear-gradient(
+//           to right bottom,
+//           $color-tertiary-light,
+//           $color-tertiary-dark
+//         ),
+//         url("../img/nat-7.jpg");
+//     }
+//   }
+//   // front style
+//   &-header {
+//     font-size: 2rem;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     color: $color-white;
+//     width: 75%;
+
+//     &-span {
+//       -webkit-box-decoration-break: clone;
+//       box-decoration-break: clone;
+//       padding: 0.7rem 0.7rem;
+//       position: absolute;
+//       bottom: 70%;
+//       right: 0%;
+//       &-1 {
+//         background-image: linear-gradient(
+//           to right bottom,
+//           rgba($color-secondary-light, 0.8),
+//           rgba($color-secondary-dark, 0.8)
+//         );
+//       }
+
+//       &-2 {
+//         background-image: linear-gradient(
+//           to right bottom,
+//           rgba($color-primary-light, 0.8),
+//           rgba($color-primary-dark, 0.8)
+//         );
+//       }
+
+//       &-3 {
+//         background-image: linear-gradient(
+//           to right bottom,
+//           rgba($color-tertiary-light, 0.8),
+//           rgba($color-tertiary-dark, 0.8)
+//         );
+//       }
+//     }
+//   }
+//   // front style
+//   &-details {
+//     ul {
+//       list-style: none;
+//       margin-top: 3rem;
+//       color: $color-grey-dark;
+//       li {
+//         text-align: center;
+//         font-size: 1.5rem;
+//         padding: 1rem;
+//         &:not(:last-child) {
+//           border-bottom: 1px solid #eee;
+//         }
+//       }
+//     }
+//   }
+
+//   &-cta {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     gap: 5rem;
+//   }
+// }
+// .card-price-box {
+//   text-align: center;
+// }
+// .card-price-only {
+//   margin-bottom: 2rem;
+// }
+
+// .card-price-value {
+//   margin-bottom: 5rem;
+//   font-size: 8rem;
+//   font-weight: 100;
+// }
+
+.card {
+  height: 55rem;
+  width: 35rem;
+  perspective: 150rem;
+  position: relative;
+
+  &-side {
+    height: 100%;
+    width: 100%;
+
+    border-radius: 1rem;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    backface-visibility: hidden;
+    transition: all 0.8s ease;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.1);
+
+    // card front style
+    &-front {
+      background-color: $color-white;
+      transform: rotateY(0);
+    }
+
+    // card back style
+    &-back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  // flip on card hover
+  &:hover {
+    .card-side-front {
+      transform: rotateY(-180deg);
+    }
+    .card-side-back {
+      transform: rotateY(0);
+    }
+  }
+
+  // card front style
+  &-picture {
+    height: 40%;
+    width: 100%;
+    background-size: cover;
+    -webkit-background-blend-mode: color;
+    background-blend-mode: overlay;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+
+    &-1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url("../img/nat-5.jpg");
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url("../img/nat-6.jpg");
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("../img/nat-7.jpg");
+    }
+  }
+
+  // card front style
+  &-header {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    color: $color-white;
+
+    &-span {
+      padding: 0.5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.8),
+          rgba($color-secondary-dark, 0.8)
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.8),
+          rgba($color-primary-dark, 0.8)
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-tertiary-light, 0.8),
+          rgba($color-tertiary-dark, 0.8)
+        );
+      }
+    }
+  }
+
+  // card front style
+  &-details {
+    color: $color-grey-dark;
+    ul {
+      margin: 0 auto;
+      // margin-top: 5rem;
+      list-style: none;
+      text-align: center;
+      width: 80%;
+      li {
+        font-size: 1.5rem;
+        padding: 1rem;
+        letter-spacing: 0.4rem;
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+
+  // card back styles
+  &-cta {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+.card-price {
+  text-align: center;
+  color: $color-white;
+  &-only {
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+  &-value {
+    font-weight: 100;
+    font-size: 8rem;
+  }
+}
+
+.difficulty {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.5rem;
+  &-easy {
+    color: $color-secondary-dark;
+  }
+  &-medium {
+    color: $color-primary-dark;
+  }
+  &-hard {
+    color: $color-tertiary-dark;
+  }
+}

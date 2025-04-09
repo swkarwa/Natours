@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss/main.scss scss/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swkarwa/Natours.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swkarwa/Natours/issues"
+  },
+  "homepage": "https://github.com/swkarwa/Natours#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}

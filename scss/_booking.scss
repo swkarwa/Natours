@@ -1,0 +1,21 @@
+@use "colors" as *;
+
+.section-book {
+  padding: 15rem;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.container-book {
+}
+
+.book {
+  background-image: url(../img/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+}

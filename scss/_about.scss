@@ -1,0 +1,76 @@
+@use "colors" as *;
+
+.section-about {
+  background-color: $color-grey-light;
+  padding: 25rem;
+  margin-top: -24rem; // move up
+  height: 95vh;
+
+  &-grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    column-gap: 5rem;
+    padding: 2rem;
+  }
+
+  &-overview {
+    padding: 2rem;
+  }
+
+  &-learn-more {
+    display: inline-block;
+    &:link,
+    &:active,
+    &:visited {
+      color: $color-primary;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: 0.5rem 0 2rem rgba($color-black, 0.2);
+    }
+  }
+}
+
+.compositation {
+  padding: 2rem;
+  position: relative;
+
+  &:hover &-photo:not(:hover) {
+    transform: scale(0.95);
+  }
+
+  &-photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 0.2rem;
+    transition: all 0.2s;
+
+    &--1 {
+      top: -2rem;
+      left: 0;
+    }
+
+    &--2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 0.5rem solid $color-primary-dark;
+      // gap between outline and image
+      outline-offset: 1rem;
+      transform: scale(1.2);
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+  }
+}

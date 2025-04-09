@@ -1,0 +1,71 @@
+@use "colors" as *;
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &-main {
+    /* animation-timing-function: ease-out; */
+    /* animation-iteration-count: 3; repeat animation for n times*/
+    /* animation-delay: 3s; wait for 3s foe animation to start*/
+    display: block;
+    letter-spacing: 4.5rem;
+    font-size: 6rem;
+    font-weight: 400;
+    /* animation attributes */
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+  }
+
+  &-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    /* animation attributes */
+    animation: moveInRight 1.5s ease-out;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5rem;
+  &:hover {
+    text-shadow: 0.5rem 0 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.heading-animated {
+  display: inline-block;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
