@@ -2,6 +2,8 @@
 
 This project is a part of learning CSS fundamentals, including layout, styling, and Sass (SCSS) usage.
 
+URL - https://curious-capybara-8ca0e6.netlify.app/
+
 ## 🛠️ Prerequisites
 
 To run this project locally, ensure you have the following installed:
