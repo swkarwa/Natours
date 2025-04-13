@@ -35,6 +35,13 @@
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 0.5rem;
+  &:hover {
+    text-shadow: 0.5rem 0 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-colored{
   background-image: linear-gradient(
     to right,
     $color-primary-light,
@@ -42,10 +49,6 @@
   );
   -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: 0.5rem;
-  &:hover {
-    text-shadow: 0.5rem 0 2rem rgba($color-black, 0.2);
-  }
 }
 
 .heading-tertiary {
@@ -66,6 +69,6 @@
   display: inline-block;
   transition: all 0.2s;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
